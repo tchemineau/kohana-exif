@@ -1,39 +1,19 @@
-<?php
-
-defined('SYSPATH') or die('No direct access allowed.');
+<?php defined('SYSPATH') or die('No direct access allowed.');
 
 require_once(Kohana::find_file('vendor', 'exif/exif'));
 
 /**
  * EXIF class
  *
- * @package    Anqh
- * @author     Antti Qvickström
- * @copyright  (c) 2010 Antti Qvickström
+ * @package    EXIF 
+ * @author     Mateusz Lerczak
+ * @copyright  (c) 2012 Mateusz Lerczak
  * @license    http://www.opensource.org/licenses/mit-license.php MIT license
  */
 class Kohana_EXIF {
-
-    /**
-     * Parsed exif data
-     *
-     * @var  array
-     */
-    public $exif = array();
-
-    /**
-     * Unparsed exif data
-     *
-     * @var  array
-     */
-    public $exif_raw = array();
-
-    /**
-     * Parse only these variables
-     *
-     * @var  array
-     */
-    public $exif_vars = array(
+    public $exif        = array();
+    public $exif_raw    = array();
+    public $exif_vars   = array(
         'make'          => array('IFD0','Make'),
         'model'         => array('IFD0', 'Model'), // Camera model
         'lens'          => array('SubIFD','MakerNote','LensInfo'), // Lens information
@@ -71,7 +51,6 @@ class Kohana_EXIF {
     public function read() {
         $exif = array();
 
-        // Read raw EXIF data
         $exif_raw = read_exif_data_raw($this->filename, false);
         
         $this->exif_raw = $exif_raw;
