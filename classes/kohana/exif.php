@@ -29,6 +29,7 @@ class Kohana_EXIF {
         'longitude'     => array('GPS', 'Longitude'), // Longitude
         'altitude'      => array('GPS', 'Altitude'), // Altitude
         'altitude_ref'  => array('GPS', 'Altitude Reference'), // Altitude reference
+        'orientation'   => array('IFD0', 'Orientation'), // Orientation
     );
     public $filename;
 
