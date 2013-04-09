@@ -1,7 +1,7 @@
 kohana-exif
 ===========
 
-Image EXIF for Kohana 3.2 based on Anqh Image Exif (Antti Qvickström)
+Image EXIF for Kohana 3.3 based on Anqh Image Exif (Antti Qvickström)
 
 array
   'make' => string 'Samsung' (length=7)
